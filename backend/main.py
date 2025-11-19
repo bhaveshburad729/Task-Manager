@@ -28,6 +28,10 @@ def get_all_tasks(db: Session = Depends(get_db)):
 @app.post("/tasks", response_model=TaskSchema)
 def create_task(task: TaskCreate, db: Session = Depends(get_db)):
     db_task = Task(title=task.title)
+    if not task.title:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST, detail="Title is required"
+        )
     db.add(db_task)
     db.commit()
     db.refresh(db_task)
@@ -38,7 +42,7 @@ def create_task(task: TaskCreate, db: Session = Depends(get_db)):
 def update_task(task_id: int, db: Session = Depends(get_db)):
     db_task = db.query(Task).filter(Task.id == task_id).first()
     if not db_task:
-        raise HTTPException(status_code=404, detail=f"Task not found for")
+        raise HTTPException(status_code=404, detail=f"Task not found for id:{task_id} ")
 
     db_task.completed = not db_task.completed
     db.commit()
