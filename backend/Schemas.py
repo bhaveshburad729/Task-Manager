@@ -1,9 +1,14 @@
 from pydantic import BaseModel
 
-class Task(BaseModel):
-    id: int
+class TaskBase(BaseModel):
     title: str
+
+class TaskCreate(TaskBase):
+    pass  # for future use — just a placeholder now
+
+class Task(TaskBase):
+    id: int
     completed: bool
 
     class Config:
-        orm_mode = True
+        orm_mode = True  # Required to read ORM objects
