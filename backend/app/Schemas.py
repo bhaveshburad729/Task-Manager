@@ -14,4 +14,4 @@ class Task(TaskBase):
     completed: bool
 
     class Config:
-        orm_mode = True  # Required to read ORM objects
+        from_attributes = True
