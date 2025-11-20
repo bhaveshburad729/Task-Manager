@@ -1,10 +1,10 @@
 from fastapi import FastAPI, Depends, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
-from models import Task
-from Schemas import TaskCreate, Task as TaskSchema
+from .models import Task
+from .Schemas import TaskCreate, Task as TaskSchema
 from sqlalchemy.orm import Session
 from typing import List
-from database import engine, get_db, Base
+from .database import engine, get_db, Base
 
 Base.metadata.create_all(bind=engine)
 
