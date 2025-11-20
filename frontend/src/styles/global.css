@@ -1,0 +1,17 @@
+body {
+  /* font-family: Arial, sans-serif; */
+  background-color: #f7f7f7;
+  padding: 20px;
+  margin: 0;
+  justify-content: center;
+  
+}
+
+h1 {
+  color: #131212;
+  margin-bottom: 20px;
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+}
