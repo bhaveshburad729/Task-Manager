@@ -43,14 +43,24 @@ function Home() {
   const totalCount = tasks.length;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 py-8 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-[oklch(0.62_0.22_276.6)] to-[oklch(0.65_0.3_19.79)] py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-2xl mx-auto">
+        
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-5xl sm:text-6xl font-bold text-slate-900 mb-2">
+          <h1
+            className="
+              text-5xl sm:text-6xl font-bold text-slate-900 mb-2 
+              transform-gpu 
+              [transform-style:preserve-3d] 
+              [transform:rotateX(18deg)_rotateY(8deg)_translateZ(25px)]
+              select-none
+            "
+          >
             Task Manager
           </h1>
-          <p className="text-slate-600">Stay organized and productive</p>
+
+          <p className="text-slate-100 m-4">Stay organized and productive</p>
         </div>
 
         {/* Task Form */}

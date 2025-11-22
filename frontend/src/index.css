@@ -9,6 +9,7 @@
   h1 {
     /* text-slate-900 not allowed in @apply */
     color: #0f172a; /* slate-900 */
+    
   }
 
   button {

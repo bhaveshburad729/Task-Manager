@@ -8,7 +8,7 @@ function TaskForm({ onAdd }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!title.trim()) return;
-    
+
     setIsSubmitting(true);
     try {
       await onAdd(title);
@@ -32,8 +32,7 @@ function TaskForm({ onAdd }) {
         <button
           type="submit"
           disabled={isSubmitting || !title.trim()}
-          className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg flex items-center gap-2 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg active:scale-95"
-        >
+          className="px-6 py-3 text-white bg-gradient-to-br from-green-600 to-blue-300 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-semibold rounded-lg flex items-center gap-2 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg active:scale-95">
           <PlusIcon size={20} />
           <span className="hidden sm:inline">Add</span>
         </button>
